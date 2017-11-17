@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Friend Finder</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container mt-5 mb-5">
+		<h1>Survey</h1>
+		<hr>
+		<h4>The Basics</h4>
+		<form>
+			<div class="form-group">
+				<label for="name">Name (required)</label>
+				<input type="text" class="form-control" id="name" required>
+			</div>
+			<div class="form-group">
+				<label for="photo">Link to Photo (required)</label>
+				<input type="text" class="form-control" id="photo" required>
+			</div>
+		</form>
+		<hr>
+		<h4>The Good Stuff</h4>
+		<h6>Rate the following on a scale from 1 to 5:</h6>
+		<form class="mt-4 mb-4">
+			<label for="pinaColadas">Pina Coladas</label>
+			<select class="custom-select d-block" id="pinaColadas">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+			<br>
+			<label for="rain">Getting caught in the rain</label>
+			<select class="custom-select d-block" id="rain">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+			<br>
+			<label for="yoga">Yoga</label>
+			<select class="custom-select d-block" id="yoga">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+			<br>
+			<label for="intelligence">Intelligence</label>
+			<select class="custom-select d-block" id="intelligence">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+			<br>
+			<label for="healthFood">Health food</label>
+			<select class="custom-select d-block" id="healthFood">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+			<br>
+			<label for="champagne">Champagne</label>
+			<select class="custom-select d-block" id="champagne">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+			<br>
+			<label for="irishPubs">Irish pubs</label>
+			<select class="custom-select d-block" id="irishPubs">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+			<br>
+			<label for="ocean">The feel of the ocean</label>
+			<select class="custom-select d-block" id="ocean">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+			<br>
+			<label for="softRock">Soft rock</label>
+			<select class="custom-select d-block" id="softRock">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+			<br>
+			<label for="cornyJokes">Corny jokes</label>
+			<select class="custom-select d-block" id="cornyJokes">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+			<br>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+	<div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Your match</h5>
+        <button type="button" class="close" data-dismiss="modal">
+        </button>
+      </div>
+      <div class="modal-body" id="matchModalBody">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
