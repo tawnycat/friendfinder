@@ -1,19 +1,19 @@
 var friends = [
 {
-  "name":"Ahmed",
-  "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
-  "scores":[
-      5,
-      1,
-      4,
-      4,
-      5,
-      1,
-      2,
-      5,
-      4,
-      1
-    ]
+  name: "my cat, Darby",
+  photo: "https://pbs.twimg.com/media/DOX8TGrUIAARFVu.jpg",
+  scores: [
+  "1",
+  "1",
+  "4",
+  "5",
+  "1",
+  "1",
+  "2",
+  "1",
+  "5",
+  "5"
+  ]
 }
 ];
 
