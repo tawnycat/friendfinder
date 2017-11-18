@@ -15,7 +15,7 @@
 		<h1>Survey</h1>
 		<hr>
 		<h4>The Basics</h4>
-		<form>
+		<form id="surveySubmit">
 			<div class="form-group">
 				<label for="name">Name (required)</label>
 				<input type="text" class="form-control" id="name" required/>
@@ -118,7 +118,7 @@
 					<option value="5">5</option>
 				</select>
 				<br>
-				<button type="submit" class="btn btn-primary" id="surveySubmit">Submit</button>
+				<button type="submit" class="btn btn-primary">Submit</button>
 			</form>
 		</div>
 		<div class="modal" tabindex="-1" role="dialog" id="matchModal">
@@ -138,8 +138,9 @@
 				</div>
 			</div>
 		</div>
+		<a href="/api/friends">API Friends List</a>
 		<script type="text/javascript">
-			$("#surveySubmit").on("submit", function(event) {
+			$("#surveySubmit").submit(function(event) {
 				event.preventDefault();
 				var currentURL = window.location.origin;
 				var newFriend = {
@@ -158,7 +159,6 @@
 					$("#cornyJokes").val().trim()
 					]
 				};
-				console.log(newFriend);
 				$.post("/api/friends", newFriend).done(function (response) {
 					infotoModal(response);
 					$("#matchModal").modal({
@@ -172,14 +172,12 @@
 			function infotoModal (response) {
 
 				$("#matchName").empty();
-				$("pictureDiv").empty();
+				$("#pictureDiv").empty();
 
 				$("#matchName").append(response.name);
 				$("#pictureDiv").append(`<img src='${ response.photo }' class='img-fluid'>`)
 
 			}
-
-
 
 		</script>
 	</script>

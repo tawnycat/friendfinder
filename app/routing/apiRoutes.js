@@ -9,9 +9,11 @@ app.get("/api/friends", function(req, res) {
 app.post("/api/friends", function(req, res) {
 
 var newFriend = req.body;
-friends.push(newFriend);
 
 var compatibleFriend = compatibility(newFriend, friends);
+
+friends.push(newFriend);
+
 
 res.json(compatibleFriend);
 
@@ -20,30 +22,23 @@ res.json(compatibleFriend);
 };
 
 function compatibility (newFriend, friends) {
-	console.log(friends);
-
-	var newFriendScore = getScoreSum(newFriend);
-
-	var allScoreSums = friends.map(getScoreSum);
-
-	var indexOfSmallestDiff = 0;
-	for (var i = 0; i < allScoreSums.length; i++) {
-		if (newFriendScore - allScoreSums[i] < newFriendScore - allScoreSums[indexOfSmallestDiff]) {
-			indexOfSmallestDiff = i;
+	var bestMatch = friends[0];
+	for (var i = 0; i < friends.length; i++) {
+		if (friendshipDifference(newFriend, friends[i]) < friendshipDifference(newFriend, bestMatch)) {
+			bestMatch = friends[i];
 		}
 	}
-	return friends[indexOfSmallestDiff];
+	return bestMatch;
 }
 
-function getScoreSum (friend) {
-	console.log(friend);
+function friendshipDifference(friendA, friendB) {
+	var diff = 0;
 
-	var scoreSum = 0;
-	for (var i = 0; i < friend.scores.length; i++) {
-		scoreSum + friend.scores[i];
+	for (var i = 0; i < friendA.scores.length; i++) {
+		diff += Math.abs(friendA.scores[i] - friendB.scores[i]);
 	}
 
-	return scoreSum
+	return diff;
 }
 
 module.exports = apiRoutes
