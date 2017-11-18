@@ -23,5 +23,9 @@
   "bugs": {
     "url": "https://github.com/tawnycat/friendfinder/issues"
   },
-  "homepage": "https://github.com/tawnycat/friendfinder#readme"
+
+  "homepage": "https://github.com/tawnycat/friendfinder#readme",
+  "scripts": {
+    "start": "node server.js"
+  }
 }
