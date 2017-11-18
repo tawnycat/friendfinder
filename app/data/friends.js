@@ -1,3 +1,4 @@
+// Hardcoded example friend to start off with
 var friends = [
 {
   name: "my cat, Darby",

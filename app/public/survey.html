@@ -140,9 +140,10 @@
 		</div>
 		<a href="/api/friends">API Friends List</a>
 		<script type="text/javascript">
+
+			// Captures form submission
 			$("#surveySubmit").submit(function(event) {
 				event.preventDefault();
-				var currentURL = window.location.origin;
 				var newFriend = {
 					name: $("#name").val().trim(),
 					photo: $("#photo").val().trim(),
@@ -159,6 +160,8 @@
 					$("#cornyJokes").val().trim()
 					]
 				};
+
+				// Posts form submission to the backend, populates modal with backend info, launches modal
 				$.post("/api/friends", newFriend).done(function (response) {
 					infotoModal(response);
 					$("#matchModal").modal({
@@ -169,6 +172,7 @@
 
 			});
 
+			// function that does the jQuery work of populating the modal
 			function infotoModal (response) {
 
 				$("#matchName").empty();
