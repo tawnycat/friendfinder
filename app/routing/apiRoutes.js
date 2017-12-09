@@ -1,4 +1,5 @@
 var friends = require("../data/friends");
+fs = require("fs");
 
 // Gives JSON objects of all the friends
 function apiRoutes (app, path) {
@@ -15,7 +16,6 @@ var newFriend = req.body;
 var compatibleFriend = compatibility(newFriend, friends);
 
 friends.push(newFriend);
-
 
 res.json(compatibleFriend);
 
